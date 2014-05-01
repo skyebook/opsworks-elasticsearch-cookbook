@@ -1,0 +1,59 @@
+{
+    "elasticsearch": {
+        "cloud": {
+            "aws": {
+                "region": "us-east-1"
+            }
+        },
+        "cluster": {
+            "name": "opsworks-elasticsearch"
+        },
+        "custom_config": {
+            "cluster.routing.allocation.awareness.attributes": "rack_id"
+        },
+        "discovery": {
+            "ec2": {
+                "tag": {
+                    "opsworks:stack": "ElasticSearch"
+                }
+            },
+            "type": "ec2",
+            "zen": {
+                "minimum_master_nodes": 2,
+                "ping": {
+                    "multicast": {
+                        "enabled": false
+                    }
+                }
+            }
+        },
+        "gateway": {
+            "expected_nodes": 3
+        },
+        "nginx": {
+            "allow_cluster_api": "true",
+            "port": 80,
+            "users": [
+                {
+                    "password": {
+                        "Ref": "WebPassword"
+                    },
+                    "username": {
+                        "Ref": "WebUsername"
+                    }
+                }
+            ]
+        },
+        "path": {
+            "data": "/mnt/elasticsearch-data"
+        }
+    },
+    "java": {
+        "accept_license_agreement": "true",
+        "install_flavor": "oracle",
+        "jdk_version": "7",
+        "oracle": {
+            "accept_oracle_download_terms": "true"
+        }
+    }
+}
