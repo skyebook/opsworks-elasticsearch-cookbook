@@ -20,10 +20,10 @@
             "Type": "String",
             "Default": "password"
         },
-        "S3Archive": {
-            "Description": "S3ArchiveURL",
+        "GitHubRepository": {
+            "Description": "GitHub Cookbooks Repository",
             "Type": "String",
-            "Default": "ENTER YOUR S3 ARCHIVE URL"
+            "Default": "https://github.com/skyebook/opsworks-elasticsearch-cookbook"
         }
     },
     "Conditions": {
@@ -257,7 +257,7 @@
                 "CustomCookbooksSource": {
                     "Type": "archive",
                     "Url": {
-                        "Ref": "S3Archive"
+                        "Ref": "GitHubRepository"
                     }
                 }
             }
