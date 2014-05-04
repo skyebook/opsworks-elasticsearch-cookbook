@@ -24,7 +24,8 @@
             "Description": "GitHub Cookbooks Repository",
             "Type": "String",
             "Default": "https://github.com/skyebook/opsworks-elasticsearch-cookbook"
-        }
+        },
+		"myInstanceType":"m3.large"
     },
     "Conditions": {
         "DefaultOWRolesCondition": {
@@ -322,7 +323,7 @@
                         "Ref": "searchLayer"
                     }
                 ],
-                "InstanceType": "m3.large"
+                "InstanceType": {"Ref":"myInstanceType"}
             }
         },
         "myInstance2": {
@@ -336,7 +337,7 @@
                         "Ref": "searchLayer"
                     }
                 ],
-                "InstanceType": "m3.large"
+                "InstanceType": {"Ref":"myInstanceType"}
             }
         },
         "myInstance3": {
@@ -350,7 +351,7 @@
                         "Ref": "searchLayer"
                     }
                 ],
-                "InstanceType": "m3.large"
+                "InstanceType": {"Ref":"myInstanceType"}
             }
         }
     }
