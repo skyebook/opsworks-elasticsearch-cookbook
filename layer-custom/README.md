@@ -1,0 +1,2 @@
+# Overview #
+Chef cookbook for setting up ElasticSearch on AWS OpsWorks.  Based on Amazon's blog post (http://blogs.aws.amazon.com/application-management/post/Tx3MEVKS0A4G7R5/Deploying-Elasticsearch-with-OpsWorks) and forked from their GitHub Repository (https://github.com/amazonwebservices/opsworks-elasticsearch-cookbook)
